@@ -17,16 +17,6 @@ def compile_lines(output_lines):
 
 def havel_hakimi(deg_seq):
     """Take a degree sequence and use the Havel-Hakimi technique to determine whether or not the degree sequence is graphic. If it is graphic, show how to construct a simple graph from it."""
-    prev_value = deg_seq[0]
-
-    # If values are inappropriate, throw an error.
-    for item in deg_seq[1:]:
-        if item < 0:
-            raise ValueError("The degree sequence contains a value less than 0.")
-        if item > prev_value:
-            raise ValueError("The degree sequence is not arranged in non-ascending order.")
-        else:
-            prev_value = item
 
     # List of lines of text to display to the user.
     output_lines = []
@@ -190,8 +180,21 @@ def feature_havel_hakimi():
         deg_seq_str = input_str.split(",")
         deg_seq_int = [int(x) for x in deg_seq_str]
     except:
-        st.warning("The input is invalid. Ensure that all of the values in the sequence are integers greater than or equal to zero, and that they are separated only by commas.")
+        st.warning("The input is invalid. Ensure that all of the values in the sequence are integers, and that they are separated only by commas.")
         st.stop()
+
+    prev_value = deg_seq_int[0]
+
+    # If values are inappropriate, show a warning.
+    for item in deg_seq_int[1:]:
+        if item < 0:
+            st.warning("The degree sequence contains a value less than 0.")
+            st.stop()
+        elif item > prev_value:
+            st.warning("The degree sequence is not arranged in non-ascending order.")
+            st.stop()
+        else:
+            prev_value = item
 
     result = havel_hakimi(deg_seq_int)
     st.markdown(f"```\n{result}\n```")
