@@ -148,7 +148,7 @@ def havel_hakimi(deg_seq):
     output_lines.append("The degree sequence is graphic.")
 
     # Explain how to construct a simple graph based on the degree sequence.
-    output_lines.append("\nGraph construction:\n1. Start by drawing a graph based on the first degree sequence listed below.\n2. Add one vertex.\n3. Add edges so that the graph follows the next sequence.\n4. Repeat steps 2 and 3 until the graph follows the last sequence.\n")
+    output_lines.append("\nGraph construction:\n1. Start by drawing a simple graph based on the first degree sequence listed below.\n2. Add one vertex.\n3. Add edges so that the graph follows the next sequence.\n4. Repeat steps 2 and 3 until the graph follows the last sequence. Ensure that the graph is simple.\n")
 
     # Go backwards from the second-to-last sequence to the very first sequence (the sequence that was inputted).
     # We don't start at the last sequence because this is the one where all of the vertices have degree 0.
@@ -168,7 +168,7 @@ def havel_hakimi(deg_seq):
 
 def feature_havel_hakimi():
     st.markdown("## Havel-Hakimi Technique")
-    st.markdown("Input a degree sequence in the text box below by typing integers greater than or equal to 0 in descending order, separated by commas. Do not put spaces. For example: `4,3,2,2,1`")
+    st.markdown("Input a degree sequence in the text box below by typing integers greater than or equal to 0 in non-ascending order, separated by commas. Do not put spaces. For example: `4,3,2,2,1`")
     st.markdown("Then, press the button. The app will show whether the sequence is graphic. If it is, the Havel-Hakimi technique will be used to show how to construct a simple graph from the sequence.")
 
     input_str = st.text_input(label = "Degree Sequence", value = "")
