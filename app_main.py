@@ -33,4 +33,4 @@ if __name__ == "__main__":
     if feature == "Havel-Hakimi Technique":
         feature_havel_hakimi()
     elif feature == "Credits":
-        st.markdown("## Credits\n\nThis app was programmed by Miguel Antonio H. Germar in 2022.\n\nThe logic of the app's features was based on this book:\n\nBataller, R., Buot, J., De Lara-Tuprio, E., Garces, I., Garciano, A., & Sarmiento, J. (2019). Chapter 10: Graph Theory and Networks. In Mathematical Ideas and Tools for the Modern World. Vibal Group, Inc.")
+        st.markdown("## Credits\n\nThis app was programmed by Miguel Antonio H. Germar in 2022.\n\nLink to the GitHub repository: https://github.com/MiguelAHG/graph-theory-examples \n\nSee `app_havel_hakimi.py` to see how the Havel-Hakimi Technique was implemented.\n\nThe logic of the app was based on this book:\n\nBataller, R., Buot, J., De Lara-Tuprio, E., Garces, I., Garciano, A., & Sarmiento, J. (2019). Chapter 10: Graph Theory and Networks. In Mathematical Ideas and Tools for the Modern World. Vibal Group, Inc.")
